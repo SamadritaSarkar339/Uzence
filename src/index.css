@@ -2,4 +2,33 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-:root { color-scheme: light dark; }
+
+/* Global dark/light glassmorphic background */
+body {
+  @apply bg-gradient-to-br from-sky-100 via-indigo-50 to-blue-200 
+         dark:from-gray-900 dark:via-slate-900 dark:to-black
+         min-h-screen font-sans text-gray-900 dark:text-gray-100;
+}
+
+.focus-ring {
+  @apply outline-none ring-2 ring-offset-2 ring-indigo-400 ring-offset-white dark:ring-offset-gray-900 transition-all;
+}
+
+/* Card styling */
+.glass-card {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(16px);
+  border-radius: 1.25rem;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.2);
+}
+
+/* Fade animation for dropdown */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fadeIn {
+  animation: fadeIn 0.25s ease-in-out;
+}
