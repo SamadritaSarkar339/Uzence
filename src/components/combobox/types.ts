@@ -1,0 +1,1 @@
+export type Option = string; export interface ComboboxMultiProps { label: string; options: Option[]; allowCreate?: boolean; }
